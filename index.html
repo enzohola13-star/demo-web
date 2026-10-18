@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FORJA Training Club · Gimnasio en Madrid</title>
+  <meta name="description" content="FORJA Training Club: entrenamiento de fuerza, HIIT, boxeo y clases en grupo en Madrid. Sin matrícula ni permanencia. Tu primera clase es gratis.">
+  <meta name="theme-color" content="#0f0f0f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FORJA Training Club · Gimnasio en Madrid">
+  <meta property="og:description" content="Fuerza, HIIT, boxeo y clases en grupo. Tu primera clase es gratis.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1200&h=630&fit=crop&q=75&auto=format">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Animaciones solo con JS y sin "movimiento reducido".
+       Si GSAP no carga en 3 s, se quita la clase para que nada quede oculto. -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('anim');
+        setTimeout(function () { if (!window.gsap) d.classList.remove('anim'); }, 3000);
+      }
+    })();
+  </script>
+
+  <!-- Tipografías: Anton (títulos condensados) + Barlow (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=900&q=70&auto=format&fit=crop"
+        imagesrcset="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=640&q=70&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=900&q=70&auto=format&fit=crop 900w, https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1600&q=70&auto=format&fit=crop 1600w, https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=2200&q=70&auto=format&fit=crop 2200w"
+        imagesizes="100vw" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Barra de progreso de lectura (se rellena con el scroll) -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <!-- ============ CABECERA ============ -->
+  <header class="site-header" id="cabecera">
+    <div class="container site-header__inner">
+      <a class="logo" href="#inicio" aria-label="FORJA Training Club, ir al inicio">FORJA<span>.</span></a>
+
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a href="#clases">Clases</a></li>
+          <li><a href="#tarifas">Tarifas</a></li>
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--orange btn--small" href="#contacto">Prueba gratis</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ 1. HERO ============ -->
+    <!-- Al hacer scroll, la imagen se recorta hasta quedar como una tarjeta -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero__media">
+        <img class="hero__img"
+             src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=900&q=70&auto=format&fit=crop"
+             srcset="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=640&q=70&auto=format&fit=crop 640w,
+                     https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=900&q=70&auto=format&fit=crop 900w,
+                     https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1600&q=70&auto=format&fit=crop 1600w,
+                     https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=2200&q=70&auto=format&fit=crop 2200w"
+             sizes="100vw" width="2200" height="1467"
+             alt="Atleta en tensión frente a una barra olímpica cargada, en penumbra"
+             fetchpriority="high" decoding="async">
+      </div>
+
+      <div class="container hero__content">
+        <p class="hero__kicker">Training Club · Madrid</p>
+        <h1 class="hero__title" id="hero-titulo">
+          <span class="line"><span class="line__inner">Entrena</span></span>
+          <span class="line"><span class="line__inner">más <em>fuerte.</em></span></span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__lead">Fuerza, HIIT, boxeo y clases en grupo con entrenadores que te corrigen de verdad. Sin matrícula. Sin permanencia.</p>
+          <a class="btn btn--orange" href="#contacto">
+            Primera clase gratis
+            <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. MANIFIESTO ============ -->
+    <!-- El JS divide el texto en palabras que se iluminan con el scroll -->
+    <section class="manifesto" aria-label="Nuestra filosofía">
+      <div class="container">
+        <p class="eyebrow">Por qué FORJA</p>
+        <p class="manifesto__text" data-words>No somos un gimnasio más. Somos un club donde entrenas con método, alguien te corrige la técnica y nadie te mira raro por ser nuevo. Aquí se viene a mejorar.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3. CIFRAS + ESPACIO ============ -->
+    <section class="space" aria-labelledby="espacio-titulo">
+      <div class="container">
+        <h2 class="sr-only" id="espacio-titulo">El club en cifras</h2>
+        <!-- data-count: número final del contador -->
+        <dl class="stats">
+          <div class="stat" data-reveal>
+            <dt>Metros de sala</dt>
+            <dd><span data-count="1200">1200</span> m²</dd>
+          </div>
+          <div class="stat" data-reveal>
+            <dt>Clases a la semana</dt>
+            <dd><span data-count="45">45</span>+</dd>
+          </div>
+          <div class="stat" data-reveal>
+            <dt>Entrenadores titulados</dt>
+            <dd><span data-count="12">12</span></dd>
+          </div>
+          <div class="stat" data-reveal>
+            <dt>Abrimos a las</dt>
+            <dd>6:30</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="space__media">
+        <img src="https://images.unsplash.com/photo-1623874514711-0f321325f318?w=1200&q=65&auto=format&fit=crop"
+             srcset="https://images.unsplash.com/photo-1623874514711-0f321325f318?w=700&q=65&auto=format&fit=crop 700w,
+                     https://images.unsplash.com/photo-1623874514711-0f321325f318?w=1200&q=65&auto=format&fit=crop 1200w,
+                     https://images.unsplash.com/photo-1623874514711-0f321325f318?w=2000&q=65&auto=format&fit=crop 2000w"
+             sizes="100vw" width="2000" height="1333" loading="lazy" decoding="async"
+             alt="Sala de entrenamiento de techo alto con racks, bancos y zona de césped artificial">
+        <figcaption>Nave industrial de 1.200 m² con zona de fuerza, ring y estudio de clases.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ 4. CLASES ============ -->
+    <!-- En escritorio la fila se desplaza en horizontal al hacer scroll (sección fijada).
+         En móvil es un carrusel que se desliza con el dedo. -->
+    <section class="classes" id="clases" aria-labelledby="clases-titulo">
+      <div class="classes__pin">
+        <div class="container classes__head">
+          <div>
+            <p class="eyebrow eyebrow--light">Clases</p>
+            <h2 class="section-title section-title--light" id="clases-titulo">Elige cómo <em>sudar.</em></h2>
+          </div>
+          <p class="classes__hint" aria-hidden="true">Desliza <span>→</span></p>
+        </div>
+
+        <div class="classes__viewport">
+          <ul class="classes__track" role="list">
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Mujer preparándose para levantar una barra en el rack">
+              <div class="class-card__body">
+                <span class="class-card__tag">45 min · Todos los niveles</span>
+                <h3>Fuerza</h3>
+                <p>Técnica de los grandes básicos y progresión semana a semana.</p>
+              </div>
+            </li>
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Atleta trabajando con cuerdas de batalla">
+              <div class="class-card__body">
+                <span class="class-card__tag">30 min · Intenso</span>
+                <h3>HIIT</h3>
+                <p>Intervalos cortos y explosivos. Media hora que cuenta como una.</p>
+              </div>
+            </li>
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Primer plano de un puño vendado sobre una barra">
+              <div class="class-card__body">
+                <span class="class-card__tag">60 min · Sin contacto</span>
+                <h3>Boxeo</h3>
+                <p>Técnica, saco y cardio. Descarga el estrés del día a golpes.</p>
+              </div>
+            </li>
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Grupo de mujeres entrenando con mancuernas en una sala luminosa">
+              <div class="class-card__body">
+                <span class="class-card__tag">50 min · En grupo</span>
+                <h3>Funcional</h3>
+                <p>Circuitos con peso libre para moverte mejor en el día a día.</p>
+              </div>
+            </li>
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Clase de movilidad sobre esterillas">
+              <div class="class-card__body">
+                <span class="class-card__tag">45 min · Suave</span>
+                <h3>Movilidad</h3>
+                <p>Estiramientos y control del cuerpo. El complemento que te falta.</p>
+              </div>
+            </li>
+            <li class="class-card">
+              <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=700&h=900&q=65&auto=format&fit=crop" width="700" height="900" loading="lazy" decoding="async" alt="Grupo corriendo por la calle en un día soleado">
+              <div class="class-card__body">
+                <span class="class-card__tag">Sábados · 9:00</span>
+                <h3>Running club</h3>
+                <p>Salimos juntos desde el club por Madrid Río. Ritmos para todos.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. CINTA GRANDE (se mueve con el scroll) ============ -->
+    <div class="bigtype" aria-hidden="true">
+      <p class="bigtype__row bigtype__row--a">Primera clase gratis ✦ Primera clase gratis ✦ Primera clase gratis ✦</p>
+      <p class="bigtype__row bigtype__row--b">Sin matrícula ✦ Sin permanencia ✦ Sin matrícula ✦ Sin permanencia ✦</p>
+    </div>
+
+    <!-- ============ 6. TARIFAS ============ -->
+    <section class="section pricing" id="tarifas" aria-labelledby="tarifas-titulo">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Tarifas</p>
+          <h2 class="section-title" id="tarifas-titulo">Precios claros. <em>Sin letra pequeña.</em></h2>
+        </header>
+
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <h3 class="plan__name">Básico</h3>
+            <p class="plan__price"><strong>29 €</strong> /mes</p>
+            <ul class="plan__list" role="list">
+              <li>Sala de fuerza y cardio</li>
+              <li>Horario completo</li>
+              <li>App con tus entrenos</li>
+            </ul>
+            <a class="btn btn--outline" href="#contacto">Empezar</a>
+          </article>
+
+          <article class="plan plan--featured" data-reveal>
+            <span class="plan__badge">El más elegido</span>
+            <h3 class="plan__name">Club</h3>
+            <p class="plan__price"><strong>45 €</strong> /mes</p>
+            <ul class="plan__list" role="list">
+              <li>Todo lo del Básico</li>
+              <li>Clases ilimitadas</li>
+              <li>Valoración inicial con un entrenador</li>
+              <li>Taquilla incluida</li>
+            </ul>
+            <a class="btn btn--orange" href="#contacto">Probar gratis</a>
+          </article>
+
+          <article class="plan" data-reveal>
+            <h3 class="plan__name">Personal</h3>
+            <p class="plan__price"><strong>120 €</strong> /mes</p>
+            <ul class="plan__list" role="list">
+              <li>Todo lo del Club</li>
+              <li>4 sesiones con entrenador personal</li>
+              <li>Plan de nutrición</li>
+            </ul>
+            <a class="btn btn--outline" href="#contacto">Hablar con un coach</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. HORARIO DE CLASES ============ -->
+    <section class="section schedule" id="horario" aria-labelledby="horario-titulo">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Horario</p>
+          <h2 class="section-title" id="horario-titulo">Encuentra <em>tu hora.</em></h2>
+        </header>
+
+        <!-- Las pestañas y las filas se generan en main.js a partir de los datos.
+             Este contenido inicial (lunes) sirve si el JS no carga. -->
+        <div class="schedule__tabs" role="tablist" aria-label="Día de la semana" data-reveal></div>
+        <ul class="schedule__list" id="horario-lista" role="list" aria-live="polite" data-reveal>
+          <li class="session"><time>07:00</time><span class="session__name">Fuerza</span><span class="session__meta">Marta · 45 min</span></li>
+          <li class="session"><time>09:30</time><span class="session__name">Movilidad</span><span class="session__meta">Iván · 45 min</span></li>
+          <li class="session"><time>14:00</time><span class="session__name">HIIT</span><span class="session__meta">Sara · 30 min</span></li>
+          <li class="session"><time>19:00</time><span class="session__name">Boxeo</span><span class="session__meta">Dani · 60 min</span></li>
+          <li class="session"><time>20:30</time><span class="session__name">Funcional</span><span class="session__meta">Marta · 50 min</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 8. CONTACTO / PRUEBA GRATIS ============ -->
+    <section class="cta" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="cta__media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=60&auto=format&fit=crop"
+             srcset="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=60&auto=format&fit=crop 800w,
+                     https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=60&auto=format&fit=crop 1400w,
+                     https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=2000&q=60&auto=format&fit=crop 2000w"
+             sizes="100vw" width="2000" height="1333" loading="lazy" decoding="async" alt="">
+      </div>
+
+      <div class="container cta__grid">
+        <div class="cta__main" data-reveal>
+          <p class="eyebrow eyebrow--light">Prueba gratis</p>
+          <h2 class="cta__title" id="contacto-titulo">Tu primera clase <em>corre de nuestra cuenta.</em></h2>
+          <p class="cta__lead">Escríbenos por WhatsApp, elige día y hora, y ven con ropa cómoda. Nosotros ponemos el resto.</p>
+          <a class="btn btn--orange btn--big" href="https://wa.me/34600987654?text=Hola%20FORJA%2C%20quiero%20reservar%20mi%20clase%20gratis." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.17-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.07.9.9-3-.2-.31a8.2 8.2 0 1 1 6.87 3.74Zm4.5-6.14c-.25-.12-1.47-.72-1.7-.8-.22-.09-.39-.13-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.1-.5.12-.12.26-.3.38-.45.13-.15.17-.25.25-.42.09-.17.05-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3c-.22.25-.86.84-.86 2.04s.88 2.37 1 2.53c.13.17 1.73 2.64 4.2 3.7.58.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>
+            Reservar por WhatsApp
+          </a>
+        </div>
+
+        <div class="cta__info" data-reveal>
+          <div>
+            <h3>Dónde</h3>
+            <address>Paseo de la Chopera, 14<br>28045 Madrid<br><span>Metro Legazpi (L3, L6)</span></address>
+          </div>
+          <div>
+            <h3>Cuándo</h3>
+            <p>Lunes a viernes · 6:30 – 23:00<br>Sábados · 9:00 – 21:00<br>Domingos · 9:00 – 14:00</p>
+          </div>
+          <div class="cta__map">
+            <iframe title="Mapa: FORJA Training Club en Paseo de la Chopera, 14, Madrid"
+                    src="https://www.google.com/maps?q=Paseo+de+la+Chopera+14,+28045+Madrid&amp;z=15&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a class="logo logo--footer" href="#inicio">FORJA<span>.</span></a>
+      <ul class="social" role="list" aria-label="Redes sociales">
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+      <p class="site-footer__legal">© <span id="anio">2026</span> FORJA Training Club · Proyecto de portfolio, negocio ficticio. Fotos de <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>.</p>
+    </div>
+  </footer>
+
+  <!-- GSAP + ScrollTrigger (CDN, versión fija) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
