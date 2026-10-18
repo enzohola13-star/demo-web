@@ -2,7 +2,7 @@
 
 Web de muestra para un gimnasio ficticio en Madrid, diseñada y desarrollada como proyecto de portfolio.
 
-🔗 **Ver la web:** [ENLACE DE NETLIFY]
+🔗 **Ver la web:** [forja-training-club.netlify.app](https://forja-training-club.netlify.app)
 
 ## Tecnologías
 

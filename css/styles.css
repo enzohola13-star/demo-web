@@ -50,7 +50,8 @@ img, svg, iframe { display: block; max-width: 100%; }
 img { height: auto; }
 a { color: inherit; }
 p { margin: 0; }
-ul[role="list"] { list-style: none; margin: 0; padding: 0; }
+/* :where() deja la especificidad en 0: las clases propias pueden poner márgenes */
+:where(ul[role="list"]) { list-style: none; margin: 0; padding: 0; }
 
 h1, h2, h3 {
   margin: 0;
